@@ -1,0 +1,79 @@
+<div class="app-container">
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <h1>SUZA LinkUp</h1>
+      <nav>
+        <a [routerLink]="['/home']" class="home">HOME</a>
+        <a [routerLink]="['/about-us']" class="about-us">ABOUT US</a>
+        <a [routerLink]="['/contacts']" class="contacts">CONTACTS</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Dashboard Content -->
+  <div class="dashboard">
+    <h4 class="greeting">
+      <span class="wave">👋</span>
+      Hello, {{ userFirstName }} &mdash; Welcome to SUZA LinkUp!
+    </h4>
+    <div class="dashboard-content">
+      <div class="dashboard-section">
+        <h2>Courses</h2>
+        <ul>
+          <li>Course 1</li>
+          <li>Course 2</li>
+          <li>Course 3</li>
+        </ul>
+      </div>
+      <div class="dashboard-section">
+        <h2>Assignments</h2>
+        <ul>
+          <li>Assignment 1 - Due Date</li>
+          <li>Assignment 2 - Due Date</li>
+          <li>Assignment 3 - Due Date</li>
+        </ul>
+      </div>
+      <div class="dashboard-section">
+        <h2>Grades</h2>
+        <ul>
+          <li>Course 1: A</li>
+          <li>Course 2: B+</li>
+          <li>Course 3: A-</li>
+        </ul>
+      </div>
+      <div class="dashboard-section">
+        <h2>Announcements</h2>
+        <ul>
+          <li>Announcement 1</li>
+          <li>Announcement 2</li>
+          <li>Announcement 3</li>
+        </ul>
+      </div>
+      <div class="dashboard-section">
+        <h2>Resources</h2>
+        <ul>
+          <li><a href="#">Library</a></li>
+          <li><a href="#">E-Books</a></li>
+          <li><a href="#">Journals</a></li>
+        </ul>
+      </div>
+      <div class="dashboard-section">
+        <h2>Profile</h2>
+        <p>View and update your profile information.</p>
+        <button>Go to Profile</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>Developed by <a href="nuraty" target="_blank">&#64;nuraty</a> | All rights Reserved | 2025</p>
+      <nav>
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </nav>
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,121 @@
+<div class="app-container" [class.dark-theme]="isDarkTheme">
+  <!-- Floating background elements -->
+  <div class="floating-elements">
+    <div *ngFor="let element of floatingElements" 
+         class="floating-element"
+         [ngStyle]="{
+           'width.px': element.size,
+           'height.px': element.size,
+           'background': element.color,
+           'top.%': element.top,
+           'left.%': element.left,
+           'animation-delay.s': element.delay
+         }"></div>
+  </div>
+  
+  <!-- Header -->
+  <header class="header" [@gradientFlow]>
+    <div class="nav-container">
+      <div class="logo" routerLink="/home">
+        <span class="logo-text">SUZA LinkUp</span>
+      </div>
+      
+      <nav class="nav-links">
+        <a routerLink="/home" 
+           class="nav-link" 
+           [class.active]="currentRoute === '/home'"
+           routerLinkActive="active">HOME</a>
+        <a routerLink="/about-us" 
+           class="nav-link"
+           [class.active]="currentRoute === '/about-us'"
+           routerLinkActive="active">ABOUT US</a>
+        <a routerLink="/contacts" 
+           class="nav-link"
+           [class.active]="currentRoute === '/contacts'"
+           routerLinkActive="active">CONTACTS</a>
+        <a routerLink="/sign-up" class="cta-button">SIGN UP</a>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="hero" @fadeInUp>
+    <h1 class="hero-title">WELCOME TO SUZA LinkUp</h1>
+    <p class="hero-subtitle">
+      Integrated Learning Management System and Social Platform for State University of Zanzibar Students
+    </p>
+  </section>
+  
+  <!-- Features Section -->
+  <section class="features" @staggerFadeIn>
+    <h2 class="features-title">Our Platform Features</h2>
+    
+    <div class="features-grid">
+      <div *ngFor="let feature of features" 
+           class="feature-card"
+           [@featureHover]="hoverState"
+           (mouseenter)="hoverState = 'hover'"
+           (mouseleave)="hoverState = 'normal'">
+        <img [src]="feature.image" [alt]="feature.title" class="feature-image">
+        <div class="feature-content">
+          <h3 class="feature-title">{{feature.title}}</h3>
+          <p class="feature-desc">{{feature.description}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about-section">
+        <div class="footer-logo">
+          <span class="footer-logo-text">SUZA LinkUp</span>
+        </div>
+        <p class="footer-about">
+          The premier academic and social platform for State University of Zanzibar students.
+        </p>
+        <div class="social-links">
+          <a *ngFor="let social of socialLinks" 
+             [href]="social.url" 
+             class="social-link" 
+             target="_blank"
+             [attr.aria-label]="social.name">
+            <i [class]="social.icon"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-links-section">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-links">
+          <li *ngFor="let link of quickLinks" class="footer-link">
+            <a [routerLink]="link.route">{{link.name}}</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="footer-links-section">
+        <h3 class="footer-heading">Legal</h3>
+        <ul class="footer-links">
+          <li *ngFor="let legal of legalLinks" class="footer-link">
+            <a [routerLink]="legal.route">{{legal.name}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-copyright">
+        <span>Developed by <a [href]="developerProfile.url" class="developer-link" target="_blank">{{developerProfile.handle}}</a></span>
+        <span>|</span>
+        <span>All rights reserved © {{currentYear}}</span>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" (click)="toggleTheme()" aria-label="Toggle theme">
+    <i [class]="isDarkTheme ? 'fas fa-sun' : 'fas fa-moon'"></i>
+  </button>
+</div>

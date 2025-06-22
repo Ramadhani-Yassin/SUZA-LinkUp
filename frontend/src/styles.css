@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --primary: #6c5ce7;
+  --primary-dark: #5649c0;
+  --secondary: #00cec9;
+  --accent: #fd79a8;
+  --dark: #2d3436;
+  --light: #f9f9f9;
+  --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+  --text-secondary: #666;
+  --footer-link: #ccc;
+}
+
+.dark-theme {
+  --dark: #f9f9f9;
+  --light: #2d3436;
+  --text-secondary: #ddd;
+}
